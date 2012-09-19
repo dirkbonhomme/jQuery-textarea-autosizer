@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Textarea Autosizer</title>
+    <style>
+        .container { width: 400px; margin: 0 auto; text-align: center; font-family: Arial; }
+        textarea { border-radius: 5px; border: 1px solid #aaa; width: 350px; padding: 5px; }
+        p { color: #888; font-size: 80%; }
+    </style>
+</head>
+<body>
+
+    <!-- demo html -->
+    <div class="container">
+
+        <h2>Textarea autosizer</h2>
+        <textarea></textarea>
+
+        <p id="logger"></p>
+
+        <button id="enable">Enable autosizer</button>
+        <button id="disable">Disable autosizer</button>
+        <button id="lipsum">Lorem ipsum...</button>
+    </div>
+    <!-- demo html -->
+
+    <!-- required scripts -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
+    <script src="jquery-autosizer.js"></script>
+    <!-- required scripts -->
+
+    <!-- demo scripts -->
+    <script>
+
+        // Enable autosizer
+        $('#enable').click(function(){
+            $('textarea').autosize();
+        });
+
+        // Disable autosizer
+        $('#disable').click(function(){
+            $('textarea').autosize(false);
+            $('textarea').css({ overflow: 'auto', resize: 'both' });
+        });
+
+        // Add lorem ipsum
+        $('#lipsum').click(function(){
+            $('textarea').val(
+                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce auctor tincidunt eros in laoreet. Suspendisse lectus dolor, tristique ut fermentum et, mattis eget purus.\n\nFusce dictum enim at eros varius quis facilisis ipsum placerat. Etiam scelerisque est a massa molestie semper. Cras faucibus mauris pellentesque nisl feugiat venenatis. Nam sed quam massa, in pellentesque augue. Proin libero est, aliquet vitae imperdiet et, ornare eu sem.\n\nDuis mattis neque eget sapien commodo sed luctus nibh cursus. Nam accumsan varius magna eget dignissim."
+            ).autosize();
+        });
+
+        // Enable logger
+        $('textarea').on('autosize', function(){
+            $('#logger').text('Current height: ' + $(this).height() + 'px');
+        });
+
+    </script>
+    <!-- demo scripts -->
+
+</body>
+</html>
