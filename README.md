@@ -21,6 +21,7 @@ http://preview.bytelogic.be/jquery-textarea-autosizer/
 
 ##Browser support
 Tested on:
+- IE9+
 - Opera 12+
 - Firefox 15+
 - Safari 6+
