@@ -3,6 +3,9 @@ jQuery-textarea-autosizer
 
 Autosize textarea height based on input
 
+##Online demo
+http://preview.bytelogic.be/jquery-textarea-autosizer/
+
 ##Usage
 
 ```javascript
